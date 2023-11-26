@@ -1,0 +1,132 @@
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --primary-color: #046ef2; /* blue tape*/
+  --secondary-color: #ede7c1; /* green autumn */
+  --ternary-color: #363f57;
+  --cuaternary-color: #44cff8;
+  --quinternary-color: #fbdc04;
+  --sextenary-color: #02338f;
+  --white-color: #fff;
+  --navbar-size: 3rem;
+  --font-root: 1.2rem;
+}
+
+html {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-size: var(--font-root);
+}
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 0px 24px;
+  height: var(--navbar-size);
+  color: var(--ternary-color);
+  top: 0;
+  transition: all 0.4s ease-in-out; 
+  position: fixed;  
+}
+
+.scrolled {
+  color: var(--white-color);
+  background-color: #02338f;
+  background-image: linear-gradient(135deg, #02338f 0%, #363f57 100%);
+}
+
+.header__logo img {
+  width: 50px;
+  height: 50px;
+  overflow: hidden;
+  object-fit: cover;
+}
+
+.header__icon {
+  display: none;
+}
+
+ul {
+  display: grid;
+  grid-auto-flow: column;
+  column-gap: 24px;
+  list-style: none;
+}
+
+nav .active {
+  color: var(--sextenary-color);
+  font-weight: bold;
+}
+
+.scrolled .active {
+  color: var(--quinternary-color);
+  font-weight: bold;
+  transition: all 0.4s ease-in-out;
+}
+
+.scrolled a:hover {
+  color: var(--quinternary-color);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--sextenary-color);
+}
+
+section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.hero img {
+  width: 60%;
+  object-fit: cover;
+}
+
+.hero__info {
+  color: var(--sextenary-color);
+  display: grid;
+  row-gap: 8px;
+  text-align: center;
+}
+
+.hidden {
+  display: block;
+}
+
+@media (max-width: 576px) {
+
+  .header__icon {
+    display: block;
+  }
+
+  nav {
+    display: none;
+    position: absolute;
+    top: var(--navbar-size);
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    padding: 24px;
+    background-color: rgba(0,0,0,0.7);
+  }
+
+  ul {
+    display: grid;
+    row-gap: 24px;
+    grid-auto-flow: row;
+  }
+}
